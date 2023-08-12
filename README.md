@@ -15,7 +15,7 @@ The dataset used is a clinically derived from an extensive survey and sourced fr
 
 ## Model Overview
 
-This Model is designed as a Random Forest Regressor, a powerful ensemble learning technique for regression tasks. It consists of an ensemble of multiple decision trees, each trained on a random subset of the training data. The predictions of these individual trees are aggregated to make the final prediction.
+This Model is designed as a Random Forest Classifier, a powerful ensemble learning technique for regression tasks. It consists of an ensemble of multiple decision trees, each trained on a random subset of the training data. The predictions of these individual trees are aggregated to make the final prediction.
 
 # Components
 1. Decision Trees: The core building blocks of the Random Forest Regressor. Each decision tree learns a set of rules to split the data into smaller subsets based on the features, aiming to minimize the variance of the target variable within each subset.
