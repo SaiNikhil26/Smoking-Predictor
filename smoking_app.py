@@ -1,7 +1,6 @@
 import streamlit as st
-import pickle
-pickle_in = open("smoking.pkl","rb")
-clf = pickle.load(pickle_in)
+import joblib
+clf = joblib.load("smoking_app1.joblib")
 
 
 def prediction(gender,age,height,weight,waist,eyesight_left,eyesight_right,hearing_left,hearing_right,systolic,relaxation,sugar,cholestrol,triglyceride,HDL,LDL,Heamoglobin,Urine,serum,AST,ALT,GTP,dental_carries,tartar):
@@ -11,7 +10,11 @@ def prediction(gender,age,height,weight,waist,eyesight_left,eyesight_right,heari
 def main():
     st.title("Smoking Preidctor")
     
-    gender = st.number_input("Gender")
+    gen =st.selectbox ('Select Gender',['Male','Female'])
+    if(gen=='Male'):
+        gender = 1
+    if(gen=='Female'):
+        gender = 0
     age = st.number_input("Age")
     height = st.number_input("Height")
     weight = st.number_input("Weight")
@@ -33,15 +36,23 @@ def main():
     AST = st.number_input("AST")
     ALT = st.number_input("ALT")
     GTP = st.number_input("GTP")
-    dental_carries = st.number_input("Dental Carries")
-    tartar = st.number_input("Tartar")
-    result = "";
+    carries = st.checkbox("Does the patient have Oral Carries?")
+    if carries:
+        dental_carries = 1
+    else:
+        dental_carries = 0
+    tar = st.checkbox("Does the patient have tartar?")
+    if tar:
+        tartar = 1
+    else:
+        tartar = 0
     if st.button("Predict"):
         result = prediction(gender, age, height, weight, waist, eyesight_left, eyesight_right, hearing_left, hearing_right, systolic, relaxation, sugar, cholestrol, triglyceride, HDL, LDL, Heamoglobin, Urine, serum, AST, ALT, GTP, dental_carries, tartar)
-    st.success("Smoking : {}".format(result))
-    if st.button("About"):
-        st.text("Learn about smoking")
+        if(result == 1):
+            st.success("The patient has a habit of smoking")
+        else:
+            st.success("The patient doesn't have smoking habits")
+
         
 if __name__=='__main__':
     main()
-    
