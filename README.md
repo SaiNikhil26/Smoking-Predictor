@@ -7,6 +7,7 @@ Welcome to the Smoking Predictor Model Repository! This repository contains a  m
 - [Introduction](#introduction)
 - [Model Overview](#model-overview)
 - [Dataset](#dataset)
+- [Usage](#Usage)
 
 ## Introduction
 
