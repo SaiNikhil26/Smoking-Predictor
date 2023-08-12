@@ -56,3 +56,7 @@ Before training this Model, the dataset underwent a series of preprocessing step
 
 The heatmap provides insights into how different features are correlated with each other, which can be helpful for understanding potential patterns and relationships in the data.
 
+## Usage 
+You can view the web application in the URL below
+
+https://smoking-predictor-kffq4nwyn7hqjtpsiexf7r.streamlit.app/
