@@ -1,6 +1,7 @@
 import streamlit as st
-import joblib
-clf = joblib.load("smoking_app1.joblib")
+import pickle
+pickle_in = open("smoking.pkl","rb")
+clf = pickle.load(pickle_in)
 
 
 def prediction(gender,age,height,weight,waist,eyesight_left,eyesight_right,hearing_left,hearing_right,systolic,relaxation,sugar,cholestrol,triglyceride,HDL,LDL,Heamoglobin,Urine,serum,AST,ALT,GTP,dental_carries,tartar):
